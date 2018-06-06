@@ -1,0 +1,23 @@
+/* Stylesheet */
+/* $mainBlue: #2f5572;
+
+body {
+  color: $mainBlue;
+  columns: 300px 2;
+}
+
+p { color: red; }
+
+a { text-decoration: underline; }
+
+.box {
+  a {
+    display: block;
+    padding: 10px;
+  }
+} */
+@import "normalize.css";
+@import "base/_global";
+@import "base/_variables";
+@import "modules/_large-hero";
+@import "modules/_btn";
