@@ -34,7 +34,16 @@
   /* taking care of mobile-first styles,
     columns to appear on larger screens */
 
+  &__b-margin-until-medium {
+    margin-bottom: 1rem;
+  }
+
   @mixin atMedium {
+
+    &__b-margin-until-medium {
+      margin-bottom: 0;
+    }
+
     &__medium-4 {
       float: left;
       width: 33.33%;
