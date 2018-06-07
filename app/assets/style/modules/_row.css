@@ -1,0 +1,50 @@
+.row {
+  /* background: pink; */
+  /* :) CLEARFIX */
+
+  /* &::after {
+    content: "";
+    clear: both;
+    display: table;
+  } */
+
+  /* a clearfix :) ... has become a mixin...  */
+
+  @mixin clearfix;
+
+  &--gutters {
+    margin-right: -65px;
+  }
+
+  &--gutters > div {    /* > to select all direct children */
+    padding-right: 65px;
+    /* box-sizing: border-box; */ /* now in the global css file */
+  }
+
+  /* &__4 {
+    float: left;
+    width: 33.33%;
+  }
+
+  &__8 {
+    float: left;
+    width: 66.66%;
+  } */
+
+  /* taking care of mobile-first styles,
+    columns to appear on larger screens */
+
+  @mixin atMedium {
+    &__medium-4 {
+      float: left;
+      width: 33.33%;
+    }
+
+    &__medium-8 {
+      float: left;
+      width: 66.66%;
+    }    
+  }
+
+
+}
