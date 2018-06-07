@@ -472,9 +472,11 @@ img {
   overflow: hidden; /* so that column content goes to the edge */
   padding-left: 18px;
   padding-right: 18px;
-  max-width: 1200px;
+  /* max-width: 1200px; */
+  max-width: 1236px; /* to account for 18px padding and border-box */
   margin-left: auto;
   margin-right: auto;
+
 }
 .wrapper--medium {
     max-width: 976px;
@@ -482,6 +484,14 @@ img {
 .wrapper .wrapper { /* when a wrapper is within a wrapper */
     padding-left: 0;
     padding-right: 0;
+  }
+.wrapper--b-margin {
+    margin-bottom: 1rem;
+  }
+@media(min-width: 530px){
+.wrapper--b-margin {
+        margin-bottom: 3.875rem
+  }
   }
 .page-section {
 
@@ -577,8 +587,16 @@ img {
       width: 33.33%;
     }
 
+    .row__medium-4--larger {
+      width: 37%;
+    }
+
     .row__medium-8 {
       float: left;
       width: 66.66%;
+    }
+
+    .row__medium-8--smaller {
+      width: 63%;
     }
   }

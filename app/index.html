@@ -53,8 +53,26 @@
 
       <h3 class="headline headline--centered  headline--orange headline--small headline--narrow  headline--light headline--b-margin-large">Ever since, we&rsquo;ve been working to make travel <strong>better for everyone.</strong></h3>
 
-      <div class="wrapper wrapper--medium">
-        <img src="assets/images/first-trip.jpg" alt="Couple walking down a street.">
+      <div class="wrapper wrapper--medium wrapper--b-margin">
+        <!-- <img src="assets/images/first-trip.jpg" alt="Couple walking down a street."> -->
+        <img sizes="(min-width: 970px) 976pw, 100vw"
+        srcset="assets/images/first-trip-low-res-i.jpg 565w, assets/images/first-trip-i.jpg 976w, assets/images/first-trip-hi-dpi-i.jpg 1952w"
+        alt="Couple walking down a street.">
+        <!-- * * * srcset attribute ^
+            Do not need <picture> element because all images are cropped same proportion, just different resolutions
+            ... so only need srcset
+            ***
+            added sizes attribute to indicate image only ever needs to be displayed at 976px wide
+              HOWEVER,
+              smartphones will be served larger images too
+              SO sizes="976px" BECOMES
+
+                sizes="(min-width: 970px) 976pw, 100vw"
+                ^ only for screens that are 970px or larger does the image need to be displayed at 976px, or otherwise 100% of the device width (vw)
+                ^ vw = viewport width
+                ^ if screen is only 360px wide, then become 100% width of that screen :)
+                ^ added a sizes media query
+        -->
       </div><!--/wrapper-->
 
 
@@ -62,10 +80,26 @@
       <div class="row row--gutters">
         <!-- <div class="row__4">
           becomes...  -->
-        <div class="row__medium-4">
-          <img src="assets/images/our-start.jpg" alt="Our founder, Jane Doe">
+        <div class="row__medium-4 row__medium-4--larger">
+          <!-- <img src="assets/images/our-start.jpg" alt="Our founder, Jane Doe"> -->
+          <!-- replacing img above with picture element for responsive ... -->
+          <picture>
+            <source sizes="404px" srcset="assets/images/our-start-i.jpg 404w, assets/images/our-start-hi-dpi-i.jpg 808w" media="(min-width: 1020px)">
+            <source sizes="320px" srcset="assets/images/our-start-portrait-i.jpg 382w, assets/images/our-start-portrait-hi-dpi-i.jpg 764w" media="(min-width: 800px)">
+            <img srcset="assets/images/our-start-landscape-i.jpg 800w, assets/images/our-start-landscape-hi-dpi-i.jpg 1600w" alt="Our founder Jane Doe">
+          </picture>
+
+          <!-- * * * sizes attribute ^
+              what is the widest that this image needs to be displayed at?
+              measure the image...
+              use sizes="x" attribute ^
+              This image will never need to be wider than... 320px... so sizes="320px"
+
+              NOTE: Baseline <img srcset above ^ doesn't need to indicate sizes attribute because this size is only used on a single column view and images will be flexible
+          -->
+
         </div><!--/column-->
-        <div class="row__medium-8">
+        <div class="row__medium-8 row__medium-8--smaller">
           <h2 class="headline">Here&rsquo;s how we got started&hellip;</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <a href="#">quis nostrud exercitation</a> ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           <p>Duis aute irure dolor in <strong>reprehenderit in</strong> voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
