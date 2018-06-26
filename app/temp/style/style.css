@@ -509,6 +509,10 @@ a {
     background-color: #2f5572;
     color: #FFF;
   }
+.page-section--testimonials {
+    background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+    background-size: cover;
+  }
 .headline {
   color: #2f5572;
   font-weight: 300;
