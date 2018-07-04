@@ -29,7 +29,16 @@
 
   //import in above constructor code from Person.js
 var $ = require('jquery');
-var Person = require('./modules/Person');
+//var Person = require('./modules/Person');
+  // this ^ the node.js way...
+  //in ES6 JS this becomes...
+import Person from './modules/Person';
+
+class Adult extends Person {
+  payTaxes(){
+      console.log(this.name + " owes $1 in taxes. ");
+  }
+}
 
 alert("D E F 6 5 4");
 // console.log(Person.exampleProperty);
@@ -38,7 +47,8 @@ alert("D E F 6 5 4");
 var john = new Person("John Doe", "blue");
 john.greet();
 
-var jane = new Person("Jane Smith", "green");
+var jane = new Adult("Jane Smith", "pink");
 jane.greet();
+jane.payTaxes();
 
 $("h1").remove();
