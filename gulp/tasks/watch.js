@@ -22,9 +22,17 @@ gulp.task('watch', function(){
     // gulp.start('styles');                           //* any file with .css ext.
     gulp.start('cssInject');
   });
+
+  watch('./app/assets/scripts/**/*.js', function(){
+    gulp.start('scriptsRefresh');
+  });
 });
 
-gulp.task('cssInject', ['styles'],function(){
+gulp.task('cssInject', ['styles'], function(){
   return gulp.src('./app/temp/style/style.css')
   .pipe(browserSync.stream());
+});
+
+gulp.task('scriptsRefresh', ['scripts'], function(){
+  browserSync.reload();
 });

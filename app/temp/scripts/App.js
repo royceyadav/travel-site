@@ -100,6 +100,7 @@
 var $ = __webpack_require__(1);
 var Person = __webpack_require__(2);
 
+alert("D E F 6 5 4");
 // console.log(Person.exampleProperty);
 // Person.exampleFunction();
 
