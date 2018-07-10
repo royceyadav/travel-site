@@ -51,4 +51,4 @@ var jane = new Adult("Jane Smith", "pink");
 jane.greet();
 jane.payTaxes();
 
-$("h1").remove();
+// $("h1").remove();
