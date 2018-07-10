@@ -11,6 +11,7 @@ class MobileMenu {
   //new way to write this...
 
   constructor(){
+    this.siteHeader = $(".site-header");
     this.menuIcon = $(".site-header__menu-icon");  // A.
     this.menuContent = $(".site-header__menu-content");
     this.events();
@@ -25,6 +26,7 @@ class MobileMenu {
     // console.log("Hooray! The icon was clicked."); // C.
     // alert(this);
     this.menuContent.toggleClass("site-header__menu-content--is-visible"); // add/toggle new class to element
+    this.siteHeader.toggleClass("site-header--is-expanded");
   }
 }
 
